@@ -8,14 +8,36 @@ export interface User {
 export namespace Repositories {
   export interface Repo {
     id: number;
-    full_name: string;
-    html_url: string;
-    stargazers_count: number;
-    language: string;
     name: string;
+    full_name: string;
+    stargazers_count: number;
+    html_url: string;
+    language: string;
   }
+
   export interface LoaderData {
     user: User;
     repos: Repo[];
+  }
+}
+
+export namespace Commits {
+  export interface ApiResponse {
+    sha: string;
+    commit: {
+      message: string;
+    };
+    html_url: string;
+  }
+
+  export interface Commit {
+    sha: string;
+    message: string;
+    html_url: string;
+  }
+
+  export interface LoaderData {
+    user: User;
+    commits: Commit[];
   }
 }

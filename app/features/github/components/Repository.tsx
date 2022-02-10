@@ -1,4 +1,5 @@
 import { ChevronRightIcon, StarIcon } from "@heroicons/react/solid";
+import { Link } from "remix";
 import { Types } from "..";
 
 export interface RepositoryProps {
@@ -7,27 +8,29 @@ export interface RepositoryProps {
 
 export function Repository({ repo }: RepositoryProps) {
   return (
-    <li
-      key={repo.id}
-      className="relative pl-4 pr-6 py-5 hover:bg-gray-50 sm:py-6 sm:pl-6 lg:pl-8 xl:pl-6"
-    >
-      <div className="flex items-center justify-between space-x-4">
+    <li className="relative pl-4 pr-6 py-5 hover:bg-gray-50 sm:py-6 sm:pl-6 lg:pl-8 xl:pl-6">
+      <Link
+        prefetch="intent"
+        to={repo.name}
+        className="flex items-center justify-between space-x-4"
+      >
         <div className="min-w-0 space-y-3">
           <div className="flex items-center space-x-3">
-            <span className="bg-green-100 h-4 w-4 rounded-full flex items-center justify-center">
+            <span
+              className="bg-green-100 h-4 w-4 rounded-full flex items-center justify-center"
+              aria-hidden="true"
+            >
               <span className="bg-green-400 h-2 w-2 rounded-full" />
             </span>
 
             <span className="block">
               <h2 className="text-sm font-medium">
-                <a href="#">
-                  <span className="absolute inset-0" aria-hidden="true" />
-                  {repo.full_name}{" "}
-                </a>
+                <span className="absolute inset-0" aria-hidden="true" />
+                {repo.full_name}{" "}
               </h2>
             </span>
           </div>
-          <a href="#" className="relative group flex items-center space-x-2.5">
+          <div className="relative group flex items-center space-x-2.5">
             <svg
               className="flex-shrink-0 w-5 h-5 text-gray-400 group-hover:text-gray-500"
               viewBox="0 0 18 18"
@@ -45,7 +48,7 @@ export function Repository({ repo }: RepositoryProps) {
             <span className="text-sm text-gray-500 group-hover:text-gray-900 font-medium truncate">
               {repo.full_name}
             </span>
-          </a>
+          </div>
         </div>
         <div className="sm:hidden">
           <ChevronRightIcon
@@ -53,27 +56,31 @@ export function Repository({ repo }: RepositoryProps) {
             aria-hidden="true"
           />
         </div>
-        {/* Repo meta info */}
+
         <div className="hidden sm:flex flex-col flex-shrink-0 items-end space-y-3">
           <p className="flex items-center space-x-4">
             <button
               type="button"
               className="relative bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
-              {repo.stargazers_count}
-              <StarIcon
-                className="text-yellow-300 hover:text-yellow-400 h-5 w-5"
-                aria-hidden="true"
-              />
+              <div className="flex items-center">
+                <StarIcon
+                  className="h-5 w-5 text-yellow-300 hover:text-yellow-400"
+                  aria-hidden="true"
+                />
+                <span className="text-xs text-gray-400">
+                  {repo.stargazers_count}
+                </span>
+              </div>
             </button>
           </p>
           <p className="flex text-gray-500 text-sm space-x-2">
             <span>{repo.language}</span>
             <span aria-hidden="true">&middot;</span>
-            <span>Brasil</span>
+            <span>Berlin</span>
           </p>
         </div>
-      </div>
+      </Link>
     </li>
   );
 }

@@ -1,6 +1,20 @@
 import { LoaderFunction, useLoaderData } from "remix";
-import { Api } from "~/features/github";
+import { GithubApi, Commits, Types } from "~/features/github";
 
-export const loader: LoaderFunction = async ({ params }) => {
-  return await Api.getCommits(params.reponame, params.username);
+export const loader: LoaderFunction = async ({
+  params,
+}): Promise<Types.Commits.LoaderData> => {
+  return {
+    user: await GithubApi.getUser(params.username),
+    commits: await GithubApi.getCommits(params.reponame, params.username),
+  };
 };
+
+export function ErrorBoundary() {
+  return <h3>Whoops. Something went wrong [Commits]</h3>;
+}
+
+export default function () {
+  const { user, commits } = useLoaderData<Types.Commits.LoaderData>();
+  return <Commits commits={commits} user={user} />;
+}
