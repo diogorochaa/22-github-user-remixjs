@@ -1,12 +1,5 @@
-<div align="center" id="top"> 
-  <img src="./.github/app.gif" alt="Remix App Template" />
 
-  &#xa0;
-
-  <!-- <a href="https://remixapptemplate.netlify.app">Demo</a> -->
-</div>
-
-<h1 align="center">Remix App Template</h1>
+<h1 align="center">Remix App </h1>
 
 
 <!-- Status -->
@@ -23,8 +16,7 @@
   <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
   <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
   <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
-  <a href="#memo-license">License</a> &#xa0; | &#xa0;
-  <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">Author</a>
+  <a href="https://github.com/DiogoRocha10" target="_blank">Author</a>
 </p>
 
 <br>
