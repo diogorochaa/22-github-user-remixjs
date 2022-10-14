@@ -47,7 +47,7 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) an
 
 ```bash
 # Clone this project
-$ git clone https://github.com/diogorochaa/my-app-remixjs
+$ git clone https://github.com/diogorochaa/github-user-remixjs
 
 # Access
 $ cd my-app-remixjs
