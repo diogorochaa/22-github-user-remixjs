@@ -16,7 +16,7 @@
   <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
   <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
   <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
-  <a href="https://github.com/DiogoRocha10" target="_blank">Author</a>
+  <a href="https://github.com/diogorochaa" target="_blank">Author</a>
 </p>
 
 <br>
@@ -47,7 +47,7 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) an
 
 ```bash
 # Clone this project
-$ git clone https://github.com/DiogoRocha10/my-app-remixjs
+$ git clone https://github.com/diogorochaa/my-app-remixjs
 
 # Access
 $ cd my-app-remixjs
@@ -62,7 +62,7 @@ $ npm run dev
 ```
 
 
-Made with :heart: by <a href="https://github.com/DiogoRocha10" target="_blank">Diogo Rocha</a>
+Made with :heart: by <a href="https://github.com/diogorochaa" target="_blank">Diogo Rocha</a>
 
 &#xa0;
 
